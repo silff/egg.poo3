@@ -9,13 +9,13 @@ public class PersonaMain {
         Dni dni = new Dni();
         dni.setDni(25228070);
         dni.setLetra("L");
-        System.out.println(dni);
+        System.out.println(dni.getDni() + dni.getLetra());
         
         Persona persona = new Persona();
-        persona.setNombre("sil");
-        persona.setApellido("fapp");
+        persona.setNombre("sil ");
+        persona.setApellido("fapp ");
         persona.setDni(dni);
-        System.out.print(persona);
+        System.out.print(persona.getNombre() + persona.getApellido() + persona.getDni().getDni() + persona.getDni().getLetra());
     }
     
 }
