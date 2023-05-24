@@ -40,8 +40,11 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo" + """                         
-                          """ + jugadores;
+        System.out.println("EQUIPO");
+        for (Jugador j : jugadores) {
+            System.out.println(j);
+        }
+        return "------";
     }
 
 }
