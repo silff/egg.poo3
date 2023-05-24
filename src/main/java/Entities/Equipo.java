@@ -7,16 +7,18 @@ package Entities;
 import java.util.ArrayList;
 import java.util.Set;
 
-
 public class Equipo {
 
+    private Jugador jugador;
     private ArrayList<Jugador> jugadores;
 
     public Equipo() {
-        jugadores = new ArrayList<>();
+        this.jugador = jugador;
+        this.jugadores = new ArrayList<>();
     }
 
-    public Equipo(Set<Jugador> jugadores) {
+    public Equipo(Jugador jugador, Set<Jugador> jugadores) {
+        this.jugador = jugador;
         this.jugadores = new ArrayList<>();
     }
 
@@ -28,9 +30,18 @@ public class Equipo {
         this.jugadores = jugadores;
     }
 
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
     @Override
     public String toString() {
-        return "Equipo" + "jugadores=" + jugadores;
+        return "Equipo" + """                         
+                          """ + jugadores;
     }
 
 }
