@@ -4,13 +4,13 @@ package Entities;
 
 public class Dni {
     
-    private long dni;
+    private Integer dni;
     private String letra;
 
     public Dni() {
     }
 
-    public Dni(long dni, String letra) {
+    public Dni(Integer dni, String letra) {
         this.dni = dni;
         this.letra = letra;
     }
@@ -19,7 +19,7 @@ public class Dni {
         return dni;
     }
 
-    public void setDni(long dni) {
+    public void setDni(Integer dni) {
         this.dni = dni;
     }
 

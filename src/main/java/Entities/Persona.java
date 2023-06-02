@@ -11,7 +11,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, Dni dni) {
+    public Persona(String nombre, String apellido, Integer edad, Dni dni) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -40,6 +40,14 @@ public class Persona {
     public void setDni(Dni dni) {
         this.dni = dni;
     }
+
+    @Override
+    public String toString() {
+        return """
+               """ + "nombre " + nombre + ", apellido " + apellido + ", dni " + dni;
+    }
+
+
     
     
 }
