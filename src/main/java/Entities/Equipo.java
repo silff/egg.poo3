@@ -41,10 +41,11 @@ public class Equipo {
     @Override
     public String toString() {
         System.out.println("EQUIPO");
+        System.out.println("-------------");
         for (Jugador j : jugadores) {
             System.out.println(j);
         }
-        return "------";
+        return "-------------";
     }
 
 }
