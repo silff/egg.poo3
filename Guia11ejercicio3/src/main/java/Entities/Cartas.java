@@ -9,17 +9,36 @@ import Enum.Palo;
 
 public class Cartas {
 
-    int numero;
-    Palo palo;
+    private int numero;
+    private Palo palo;
+
+    public Cartas() {
+    }
 
     public Cartas(int numero, Palo palo) {
         this.numero = numero;
         this.palo = palo;
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public Palo getPalo() {
+        return palo;
+    }
+
+    public void setPalo(Palo palo) {
+        this.palo = palo;
+    }
+
     @Override
     public String toString() {
-        
+
         return """
                
                """ + numero + " " + palo;
