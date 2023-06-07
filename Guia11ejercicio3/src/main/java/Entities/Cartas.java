@@ -5,8 +5,25 @@ de carta y el palo.
  */
 package Entities;
 
+import Enum.Palo;
+
 public class Cartas {
-    
-    Integer numero;
+
+    int numero;
     Palo palo;
+
+    public Cartas(int numero, Palo palo) {
+        this.numero = numero;
+        this.palo = palo;
+    }
+
+    @Override
+    public String toString() {
+        
+        return """
+               
+               """ + numero + " " + palo;
+
+    }
+
 }
