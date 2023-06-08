@@ -70,9 +70,10 @@ public class BarajaServicio {
         System.out.println("Cuantas cartas quiere?");
         int cantidad = sc.nextInt();
         int mazo = barajaCompleta.size();
+        ArrayList<Cartas> cartasMano = new ArrayList<>();
         if (cantidad <= mazo) {
             for (int i = 0; i < cantidad; i++) {
-                System.out.println("Se entrega " + barajaCompleta.get(i).toString());
+                cartasMano.add(barajaCompleta.get(i));
                 cartasEntregadas.add(barajaCompleta.get(i));
             }
 
@@ -80,6 +81,7 @@ public class BarajaServicio {
             System.out.println("No hay suficientes cartas, quedan ");
             cartasDisponibles();
         }
+        System.out.println("sus cartas: " + cartasMano);
         barajaCompleta.removeAll(cartasEntregadas);
     }
 
@@ -106,8 +108,9 @@ public class BarajaServicio {
                            3 - Pedir cartas
                            4 - Ver cartas repartidas
                            5 - Ver cartas en el mazo
-                           6 - Mazo nuevo
-                           7 - Salir
+                           6 - Cartas disponibles
+                           7 - Mazo nuevo
+                           8 - Salir
                            """);
 
         String opcion = sc.next();
@@ -134,10 +137,14 @@ public class BarajaServicio {
                 menu();
             }
             case "6" -> {
+                cartasDisponibles();
+                menu();
+            }
+            case "7" -> {
                 crearBaraja();
                 menu();
             }
-            case "7" ->
+            case "8" ->
                 salir();
             default -> {
             }
