@@ -2,41 +2,32 @@
  */
 package Entities;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Baraja {
 
-    private Cartas[] c;
-    private int mazo = 48;
+    private ArrayList<Cartas> c;
 
     public Baraja() {
-        c = new Cartas[mazo];
+        this.c = new ArrayList<>();
     }
 
-    public Baraja(Cartas[] c, int mazo) {
+    public Baraja(ArrayList<Cartas> c) {
         this.c = c;
-        this.mazo = mazo;
     }
 
-    public Cartas[] getC() {
+    public ArrayList<Cartas> getC() {
         return c;
     }
 
-    public void setC(Cartas[] c) {
+    public void setC(ArrayList<Cartas> c) {
         this.c = c;
-    }
-
-    public int getMazo() {
-        return mazo;
-    }
-
-    public void setMazo(int mazo) {
-        this.mazo = mazo;
     }
 
     @Override
     public String toString() {
-        return Arrays.toString(c);
+        return "Baraja" + c;
     }
 
+    
 }

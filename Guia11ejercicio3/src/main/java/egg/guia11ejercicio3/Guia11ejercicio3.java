@@ -19,5 +19,6 @@ public class Guia11ejercicio3 {
         BarajaServicio b = new BarajaServicio();
         b.crearBaraja();
         b.mostrarBaraja();
+        b.barajar();
     }
 }

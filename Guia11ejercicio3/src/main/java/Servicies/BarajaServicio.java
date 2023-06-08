@@ -1,5 +1,4 @@
 /*Las operaciones que podrá realizar la baraja son:
-• barajar(): cambia de posición todas las cartas aleatoriamente.
 • siguienteCarta(): devuelve la siguiente carta que está en la baraja, cuando no haya más o
 se haya llegado al final, se indica al usuario que no hay más cartas.
 • cartasDisponibles(): indica el número de cartas que aún se puede repartir.
@@ -15,6 +14,8 @@ package Servicies;
 import Entities.Baraja;
 import Entities.Cartas;
 import Enum.Palo;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class BarajaServicio {
@@ -22,26 +23,37 @@ public class BarajaServicio {
     private Cartas carta;
     private final Baraja baraja;
     private final Scanner sc;
+    ArrayList<Cartas> barajaCompleta;
 
     public BarajaServicio() {
         this.baraja = new Baraja();
         this.sc = new Scanner(System.in).useDelimiter("\n");
         this.carta = carta;
+        this.barajaCompleta = baraja.getC();
     }
 
     public void crearBaraja() {
-        for (Palo p : Palo.values()) {
-            for (int i = 0; i < baraja.getMazo(); i++) {
-                if (i == 7 || i == 8) {
-                } else {
-                    baraja.getC()[i] = new Cartas(i + 1, p);
-                }
 
+        for (Palo p : Palo.values()) {
+            for (int i = 0; i < 12; i++) {
+                if (i == 7 || i == 8) {
+                    continue;
+                } else {
+                    carta = new Cartas(i + 1, p);
+                }
+                barajaCompleta.add(carta);
             }
         }
+
     }
 
     public void mostrarBaraja() {
         System.out.println(baraja.toString());
+    }
+
+    /*• barajar(): cambia de posición todas las cartas aleatoriamente.*/
+    public void barajar() {
+        Collections.shuffle(barajaCompleta);
+        System.out.println(barajaCompleta);
     }
 }
