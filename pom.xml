@@ -4,7 +4,7 @@
     <groupId>com.egg</groupId>
     <artifactId>egg.poo3</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <modules>
         <module>Guia11ejercicio2extra</module>
     </modules>
