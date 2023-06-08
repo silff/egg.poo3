@@ -1,8 +1,5 @@
 /*Las operaciones que podrá realizar la baraja son:
-• cartasMonton(): mostramos aquellas cartas que ya han salido, si no ha salido ninguna
-indicárselo al usuario
-• mostrarBaraja(): muestra todas las cartas hasta el final. Es decir, si se saca una carta y
-luego se llama al método, este no mostrara esa primera carta. */
+ */
 package Servicies;
 
 import Entities.Baraja;
@@ -18,12 +15,14 @@ public class BarajaServicio {
     private final Baraja baraja;
     private final Scanner sc;
     private final ArrayList<Cartas> barajaCompleta;
+    private final ArrayList<Cartas> cartasEntregadas;
 
     public BarajaServicio() {
         this.baraja = new Baraja();
         this.sc = new Scanner(System.in).useDelimiter("\n");
-        this.carta = carta;
+        this.carta = new Cartas();
         this.barajaCompleta = baraja.getC();
+        this.cartasEntregadas = new ArrayList<>();
     }
 
     public void crearBaraja() {
@@ -39,14 +38,15 @@ public class BarajaServicio {
         }
     }
 
+    /*• mostrarBaraja(): muestra todas las cartas hasta el final. Es decir, si se 
+    saca una carta y luego se llama al método, este no mostrara esa primera carta.*/
     public void mostrarBaraja() {
         System.out.println(baraja.toString());
     }
 
     /*• barajar(): cambia de posición todas las cartas aleatoriamente.*/
     public void barajar() {
-        Collections.shuffle(barajaCompleta);
-        mostrarBaraja();
+        Collections.shuffle(barajaCompleta);      
     }
 
     /*• siguienteCarta(): devuelve la siguiente carta que está en la baraja,
@@ -60,7 +60,7 @@ public class BarajaServicio {
 
     /*• cartasDisponibles(): indica el número de cartas que aún se puede repartir.*/
     public void cartasDisponibles() {
-        barajaCompleta.size();
+        System.out.println("Cartas disponibles " + barajaCompleta.size());
     }
 
     /*• darCartas(): dado un número de cartas que nos pidan, le devolveremos ese
@@ -69,17 +69,79 @@ public class BarajaServicio {
     public void darCartas() {
         System.out.println("Cuantas cartas quiere?");
         int cantidad = sc.nextInt();
-        /*if (cantidad <= barajaCompleta.size()) {
+        int mazo = barajaCompleta.size();
+        if (cantidad <= mazo) {
             for (int i = 0; i < cantidad; i++) {
-                System.out.println("Se entrega " + mazoInicial.getCartas().get(i).toString());
+                System.out.println("Se entrega " + barajaCompleta.get(i).toString());
+                cartasEntregadas.add(barajaCompleta.get(i));
             }
-            for (int i = 0; i < cantidad; i++) {
-                cartasEntregadas.getCartas().add(mazoInicial.getCartas().get(0));
-                mazoInicial.getCartas().remove(0);
-            }
+
         } else {
-            System.out.println("No hay suficientes cartas");
+            System.out.println("No hay suficientes cartas, quedan ");
             cartasDisponibles();
-        }*/
+        }
+        barajaCompleta.removeAll(cartasEntregadas);
+    }
+
+    /*• cartasMonton(): mostramos aquellas cartas que ya han salido, si no ha 
+    salido ninguna indicárselo al usuario*/
+    public void cartasMonton() {
+
+        if (cartasEntregadas.isEmpty()) {
+            System.out.println("Aun no se repartieron cartas");
+        } else {
+            System.out.println("Se repartieron " + cartasEntregadas.toString());
+        }
+    }
+
+    public void salir() {
+
+    }
+
+    public void menu() {
+        System.out.println("""
+                           MENU                            
+                           1 - Barajar
+                           2 - Ver siguiente carta
+                           3 - Pedir cartas
+                           4 - Ver cartas repartidas
+                           5 - Ver cartas en el mazo
+                           6 - Mazo nuevo
+                           7 - Salir
+                           """);
+
+        String opcion = sc.next();
+
+        switch (opcion) {
+            case "1":
+                barajar();
+                menu();
+                break;
+            case "2":
+                siguienteCarta();
+                menu();
+                break;
+            case "3":
+                darCartas();
+                menu();
+                break;
+            case "4":
+                cartasMonton();
+                menu();
+                break;
+            case "5":
+                mostrarBaraja();
+                menu();
+                break;
+            case "6":
+                crearBaraja();
+                menu();
+                break;
+            case "7":
+                salir();
+                break;
+            default:
+                break;
+        }
     }
 }

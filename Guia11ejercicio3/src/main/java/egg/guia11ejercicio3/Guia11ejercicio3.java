@@ -10,8 +10,6 @@ public class Guia11ejercicio3 {
 
         BarajaServicio b = new BarajaServicio();
         b.crearBaraja();
-        b.barajar();
-        b.siguienteCarta();
-        b.cartasDisponibles();
+        b.menu();
     }
 }
