@@ -1,5 +1,4 @@
 /*Las operaciones que podrá realizar la baraja son:
-• cartasDisponibles(): indica el número de cartas que aún se puede repartir.
 • darCartas(): dado un número de cartas que nos pidan, le devolveremos ese número de
 cartas. En caso de que haya menos cartas que las pedidas, no devolveremos nada, pero
 debemos indicárselo al usuario.
@@ -57,6 +56,13 @@ public class BarajaServicio {
     cuando no haya más o se haya llegado al final, se indica al usuario que no 
     hay más cartas.*/
     public void siguienteCarta() {
-        
+        barajaCompleta.get(0);
+        System.out.println("La siguiente carta es : " + barajaCompleta.get(0).toString());
+        //return c;
+    }
+
+    /*• cartasDisponibles(): indica el número de cartas que aún se puede repartir.*/
+    public void cartasDisponibles() {
+        mostrarBaraja();
     }
 }

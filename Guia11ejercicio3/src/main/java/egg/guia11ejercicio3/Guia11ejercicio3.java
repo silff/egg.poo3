@@ -15,5 +15,7 @@ public class Guia11ejercicio3 {
         b.crearBaraja();
         //b.mostrarBaraja();
         b.barajar();
+        b.siguienteCarta();
+        b.cartasDisponibles();
     }
 }
