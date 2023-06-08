@@ -46,7 +46,7 @@ public class BarajaServicio {
 
     /*• barajar(): cambia de posición todas las cartas aleatoriamente.*/
     public void barajar() {
-        Collections.shuffle(barajaCompleta);      
+        Collections.shuffle(barajaCompleta);
     }
 
     /*• siguienteCarta(): devuelve la siguiente carta que está en la baraja,
@@ -113,35 +113,34 @@ public class BarajaServicio {
         String opcion = sc.next();
 
         switch (opcion) {
-            case "1":
+            case "1" -> {
                 barajar();
                 menu();
-                break;
-            case "2":
+            }
+            case "2" -> {
                 siguienteCarta();
                 menu();
-                break;
-            case "3":
+            }
+            case "3" -> {
                 darCartas();
                 menu();
-                break;
-            case "4":
+            }
+            case "4" -> {
                 cartasMonton();
                 menu();
-                break;
-            case "5":
+            }
+            case "5" -> {
                 mostrarBaraja();
                 menu();
-                break;
-            case "6":
+            }
+            case "6" -> {
                 crearBaraja();
                 menu();
-                break;
-            case "7":
+            }
+            case "7" ->
                 salir();
-                break;
-            default:
-                break;
+            default -> {
+            }
         }
     }
 }
