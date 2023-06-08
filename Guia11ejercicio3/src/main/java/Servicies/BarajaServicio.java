@@ -1,6 +1,4 @@
 /*Las operaciones que podrá realizar la baraja son:
-• siguienteCarta(): devuelve la siguiente carta que está en la baraja, cuando no haya más o
-se haya llegado al final, se indica al usuario que no hay más cartas.
 • cartasDisponibles(): indica el número de cartas que aún se puede repartir.
 • darCartas(): dado un número de cartas que nos pidan, le devolveremos ese número de
 cartas. En caso de que haya menos cartas que las pedidas, no devolveremos nada, pero
@@ -23,7 +21,7 @@ public class BarajaServicio {
     private Cartas carta;
     private final Baraja baraja;
     private final Scanner sc;
-    ArrayList<Cartas> barajaCompleta;
+    private final ArrayList<Cartas> barajaCompleta;
 
     public BarajaServicio() {
         this.baraja = new Baraja();
@@ -33,7 +31,6 @@ public class BarajaServicio {
     }
 
     public void crearBaraja() {
-
         for (Palo p : Palo.values()) {
             for (int i = 0; i < 12; i++) {
                 if (i == 7 || i == 8) {
@@ -44,7 +41,6 @@ public class BarajaServicio {
                 barajaCompleta.add(carta);
             }
         }
-
     }
 
     public void mostrarBaraja() {
@@ -54,6 +50,13 @@ public class BarajaServicio {
     /*• barajar(): cambia de posición todas las cartas aleatoriamente.*/
     public void barajar() {
         Collections.shuffle(barajaCompleta);
-        System.out.println(barajaCompleta);
+        mostrarBaraja();
+    }
+
+    /*• siguienteCarta(): devuelve la siguiente carta que está en la baraja,
+    cuando no haya más o se haya llegado al final, se indica al usuario que no 
+    hay más cartas.*/
+    public void siguienteCarta() {
+        
     }
 }
