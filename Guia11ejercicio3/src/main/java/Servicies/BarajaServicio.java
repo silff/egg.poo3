@@ -1,7 +1,4 @@
 /*Las operaciones que podrá realizar la baraja son:
-• darCartas(): dado un número de cartas que nos pidan, le devolveremos ese número de
-cartas. En caso de que haya menos cartas que las pedidas, no devolveremos nada, pero
-debemos indicárselo al usuario.
 • cartasMonton(): mostramos aquellas cartas que ya han salido, si no ha salido ninguna
 indicárselo al usuario
 • mostrarBaraja(): muestra todas las cartas hasta el final. Es decir, si se saca una carta y
@@ -63,6 +60,26 @@ public class BarajaServicio {
 
     /*• cartasDisponibles(): indica el número de cartas que aún se puede repartir.*/
     public void cartasDisponibles() {
-        mostrarBaraja();
+        barajaCompleta.size();
+    }
+
+    /*• darCartas(): dado un número de cartas que nos pidan, le devolveremos ese
+    número de cartas. En caso de que haya menos cartas que las pedidas, no
+    devolveremos nada, pero debemos indicárselo al usuario.*/
+    public void darCartas() {
+        System.out.println("Cuantas cartas quiere?");
+        int cantidad = sc.nextInt();
+        /*if (cantidad <= barajaCompleta.size()) {
+            for (int i = 0; i < cantidad; i++) {
+                System.out.println("Se entrega " + mazoInicial.getCartas().get(i).toString());
+            }
+            for (int i = 0; i < cantidad; i++) {
+                cartasEntregadas.getCartas().add(mazoInicial.getCartas().get(0));
+                mazoInicial.getCartas().remove(0);
+            }
+        } else {
+            System.out.println("No hay suficientes cartas");
+            cartasDisponibles();
+        }*/
     }
 }
