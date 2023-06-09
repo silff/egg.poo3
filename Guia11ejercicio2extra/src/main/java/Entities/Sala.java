@@ -19,7 +19,28 @@ vacío.
 package Entities;
 
 public class Sala {
-    private Asientos[][] asientos;
-   
-    
+
+    private final Asientos asientos;
+    private final Asientos[][] sala;
+
+    public Sala() {
+        this.asientos = new Asientos();
+        this.sala = new Asientos[8][6];
+    }
+
+    public void crearSala() {
+        for (int i = 7; i >= 0; i--) {
+            for (int j = 5; j >= 0; j--) {
+                sala[i][j] = new Asientos(i, 'A');
+            }
+        }
+    }
+
+    public void mostrarAsientos() {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 6; j++) {
+                System.out.println(sala[i][j]);
+            }
+        }
+    }
 }

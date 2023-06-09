@@ -11,9 +11,15 @@ cada asiento o solo las X y espacios vacíos.
  */
 package egg.guia11ejercicio2extra;
 
+import Entities.Sala;
+
 public class Guia11ejercicio2extra {
 
     public static void main(String[] args) {
 
+        Sala sala = new Sala();
+        sala.crearSala();
+        sala.mostrarAsientos();
+        
     }
 }

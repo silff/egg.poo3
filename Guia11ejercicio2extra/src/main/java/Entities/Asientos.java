@@ -3,18 +3,17 @@
 package Entities;
 
 public class Asientos {
-    
+
     private int filas;
-    private String columnas;
+    private char columnas;
     private boolean ocupado;
 
     public Asientos() {
     }
 
-    public Asientos(int filas, String columnas, boolean ocupado) {
+    public Asientos(int filas, char columnas) {
         this.filas = filas;
         this.columnas = columnas;
-        this.ocupado = ocupado;
     }
 
     public int getFilas() {
@@ -25,11 +24,11 @@ public class Asientos {
         this.filas = filas;
     }
 
-    public String getColumnas() {
+    public int getColumnas() {
         return columnas;
     }
 
-    public void setColumnas(String columnas) {
+    public void setColumnas(char columnas) {
         this.columnas = columnas;
     }
 
@@ -40,6 +39,10 @@ public class Asientos {
     public void setOcupado(boolean ocupado) {
         this.ocupado = ocupado;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return  filas + " " + columnas;
+    }
+
 }
