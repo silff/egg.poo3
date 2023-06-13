@@ -4,32 +4,38 @@ package Entities;
 
 public class Asientos {
 
-    private int filas;
-    private char columnas;
+    private int fila;
+    private char columna;
     private boolean ocupado;
 
     public Asientos() {
     }
 
-    public Asientos(int filas, char columnas) {
-        this.filas = filas;
-        this.columnas = columnas;
+    public Asientos(int fila, char columna) {
+        this.fila = fila;
+        this.columna = columna;
     }
 
-    public int getFilas() {
-        return filas;
+    public Asientos(int fila, char columna, boolean ocupado) {
+        this.fila = fila;
+        this.columna = columna;
+        this.ocupado = ocupado;
     }
 
-    public void setFilas(int filas) {
-        this.filas = filas;
+    public int getFila() {
+        return fila;
     }
 
-    public int getColumnas() {
-        return columnas;
+    public void setFila(int fila) {
+        this.fila = fila;
     }
 
-    public void setColumnas(char columnas) {
-        this.columnas = columnas;
+    public int getColumna() {
+        return columna;
+    }
+
+    public void setColumnas(char columna) {
+        this.columna = columna;
     }
 
     public boolean isOcupado() {
@@ -42,7 +48,7 @@ public class Asientos {
 
     @Override
     public String toString() {
-        return  filas + " " + columnas;
+        return fila + " " + columna;
     }
 
 }

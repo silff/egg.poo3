@@ -1,6 +1,4 @@
-/*Nos piden hacer un programa sobre un Cine, que tiene una sala con un conjunto 
-de asientos (8 filas por 6 columnas). De Cine nos interesa conocer la película 
-que se está reproduciendo, la sala con los espectadores y el precio de la entrada.  
+/* 
 Para representar la sala con los espectadores vamos a utilizar una matriz. Los
 asientos son etiquetados por una letra y un número la fila A1 empieza al final
 del mapa como se muestra en la tabla. También deberemos saber si el asiento está 
@@ -20,27 +18,53 @@ package Entities;
 
 public class Sala {
 
-    private final Asientos asientos;
-    private final Asientos[][] sala;
+    private int filas;
+    private int columnas;
+    private Asientos[][] sala;
 
     public Sala() {
-        this.asientos = new Asientos();
-        this.sala = new Asientos[8][6];
+
     }
 
-    public void crearSala() {
-        for (int i = 7; i >= 0; i--) {
-            for (int j = 5; j >= 0; j--) {
-                sala[i][j] = new Asientos(i, 'A');
-            }
-        }
+    public Sala(int filas, int columnas) {
+        this.filas = filas;
+        this.columnas = columnas;
+        this.sala = new Asientos[filas][columnas];
     }
 
-    public void mostrarAsientos() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 6; j++) {
-                System.out.println(sala[i][j]);
-            }
-        }
+    public int getFilas() {
+        return filas;
     }
+
+    public void setFilas(int filas) {
+        this.filas = filas;
+    }
+
+    public int getColumnas() {
+        return columnas;
+    }
+
+    public void setColumnas(int columnas) {
+        this.columnas = columnas;
+    }
+
+    public Asientos[][] getSala() {
+        return sala;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = filas - 1; i >= 0; i--) {
+            for (int j = 0; j < columnas; j++) {
+                sb.append(sala[i][j].toString());
+                if (j < columnas - 1) {
+                    sb.append(" | ");
+                }
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
 }
