@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/* consumo energético (letras entre A y F)
+letra F por defecto.
  */
 package Enum;
 
-/**
- *
- * @author Silvana
- */
 public enum Consumo {
-    
+
+    A, B, C, D, E, F;
+
+    public static final Consumo DEFAULT = F;
+
 }
