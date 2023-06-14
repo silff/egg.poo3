@@ -38,6 +38,6 @@ el precio final de los dos electrodomésticos.
  */
 package Entities;
 
-public class Televisor {
+public class Televisor extends Electrodomesticos{
     
 }

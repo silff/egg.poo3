@@ -3,15 +3,15 @@
  */
 package egg.guia12ejercicio2;
 
-import Entities.Electrodomesticos;
+
+import Servicies.ElectrodomesticosServicio;
 
 public class Guia12ejercicio2 {
 
     public static void main(String[] args) {
 
-        Electrodomesticos nuevo = new Electrodomesticos();
-        nuevo.setColor(nuevo.getColor());
-        nuevo.setConsumo(nuevo.getConsumo());
+        ElectrodomesticosServicio nuevo = new ElectrodomesticosServicio();
+        nuevo.comprobarColor();
         System.out.println(nuevo);
     }
 }

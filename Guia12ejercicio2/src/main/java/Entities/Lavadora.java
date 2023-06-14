@@ -18,6 +18,6 @@ visto en la clase Electrodoméstico también deben afectar al precio.
  */
 package Entities;
 
-public class Lavadora {
+public class Lavadora extends Electrodomesticos{
     
 }
