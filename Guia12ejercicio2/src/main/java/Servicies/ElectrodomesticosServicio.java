@@ -16,6 +16,7 @@ public class ElectrodomesticosServicio {
         this.sc = new Scanner(System.in).useDelimiter("\n");
         this.elect = new Electrodomesticos();
     }
+
     //• Método comprobarColor(String color): comprueba que el color es correcto, y si no lo es,
     //usa el color blanco por defecto. Los colores disponibles para los electrodomésticos son
     //blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en
@@ -27,12 +28,12 @@ public class ElectrodomesticosServicio {
         }
 
         String color = sc.next().toUpperCase();
-        
-         if (!Arrays.asList(Color.values()).contains(Color.valueOf(color))) {
+
+        if (color == null) {
+            elect.setColor(elect.getColor());
+        } else if (!Arrays.asList(Color.values()).contains(Color.valueOf(color))) {
             System.out.println("color no valido");
-        } else if (color == null) {
-             elect.setColor(elect.getColor());
-         } else {
+        } else {
             elect.setColor(Color.valueOf(color));
         }
 
