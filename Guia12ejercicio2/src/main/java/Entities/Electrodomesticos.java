@@ -66,7 +66,6 @@ public class Electrodomesticos {
         } else {
             this.consumo = consumo;
         }
-
     }
 
     public double getPeso() {
@@ -79,11 +78,9 @@ public class Electrodomesticos {
 
     @Override
     public String toString() {
-        return "Electrodomesticos{" + "precio=" + precio + ", color=" + color + ", consumo=" + consumo + ", peso=" + peso + '}';
+        return """
+                      Electrodomesticos
+               """
+                + "precio " + precio + "| color " + color + "| consumo " + consumo + "| peso " + peso;
     }
-    /*• Metodo crearElectrodomestico(): le pide la información al usuario y llena el
-    electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
-    precio se le da un valor base de $1000.
-    • Método precioFinal(): según el consumo energético y su tamaño, aumentará el valor del
-    precio. Esta es la lista de precios:*/
 }
