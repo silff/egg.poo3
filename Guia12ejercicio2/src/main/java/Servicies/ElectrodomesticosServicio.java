@@ -16,25 +16,36 @@ public class ElectrodomesticosServicio {
         this.sc = new Scanner(System.in).useDelimiter("\n");
         this.elect = new Electrodomesticos();
     }
+
     //• Método comprobarColor(String color): comprueba que el color es correcto, y si no lo es,
     //usa el color blanco por defecto. Los colores disponibles para los electrodomésticos son
     //blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en
     //minúsculas. Este método se invocará al crear el objeto y no será visible.
     public void comprobarColor() {
-        System.out.println("colores disponibles");
-        for (Color color : Color.values()) {
-            System.out.println(color);
-        }
+        do {
+            System.out.println("colores disponibles");
+            for (Color c : Color.values()) {
+                System.out.println(c);
+            }
 
-        String color = sc.next().toUpperCase();
-        
-         if (!Arrays.asList(Color.values()).contains(Color.valueOf(color))) {
-            System.out.println("color no valido");
-        } else if (color == null) {
-             elect.setColor(elect.getColor());
-         } else {
-            elect.setColor(Color.valueOf(color));
-        }
+            boolean colorValido = false;
+            String color = sc.next().toUpperCase();
+
+            for (Color c : Color.values()) {
+                if (c.name().equals(color)) {
+                    colorValido = true;
+                    break;
+                }
+            }
+            if (!colorValido) {
+                System.out.println("color no valido - volver a seleccionar");
+            } else if (color == null) {
+                elect.setColor(elect.getColor());
+            } else {
+                elect.setColor(Color.valueOf(color));
+            }
+
+        } while (true);
 
     }
     //• Método comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta,
