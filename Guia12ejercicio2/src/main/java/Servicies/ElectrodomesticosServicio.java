@@ -7,24 +7,26 @@ import java.util.Scanner;
 
 public class ElectrodomesticosServicio {
 
-    private final Scanner sc;
-    private Electrodomesticos elect;
+    protected Scanner sc;
+    protected Electrodomesticos elect;
 
     public ElectrodomesticosServicio() {
         this.sc = new Scanner(System.in).useDelimiter("\n");
+        this.elect = new Electrodomesticos();
     }
 
     /*• Metodo crearElectrodomestico(): le pide la información al usuario y llena el
     electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
     precio se le da un valor base de $1000.(precio, color,
     //consumo energético (letras entre A y F) y peso)*/
-    public void crearElectrodomestico() {
-        elect = new Electrodomesticos();
+    public Electrodomesticos crearElectrodomestico() {
+        //elect = new Electrodomesticos();
         double precioBase = 1000;
         System.out.println("precio");
         elect.setPrecio(precioBase + sc.nextDouble());
         System.out.println("peso");
         elect.setPeso(sc.nextDouble());
+        return elect;
     }
 
     /*• Método precioFinal(): según el consumo energético y su tamaño, aumentará el valor del
@@ -72,6 +74,7 @@ Mayor que 80 kg $1000*/
         precioConsumo();
         precioPeso();
     }
+
     @Override
     public String toString() {
         return """
@@ -79,4 +82,3 @@ Mayor que 80 kg $1000*/
     }
 
 }
-// this.color = (color == null) ? Color.DEFAULT : color;
