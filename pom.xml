@@ -11,6 +11,7 @@
         <module>Guia12manos2</module>
         <module>Guia12ejercicio1</module>
         <module>Guia12ejercicio2</module>
+        <module>Guia12ejercicio3</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
