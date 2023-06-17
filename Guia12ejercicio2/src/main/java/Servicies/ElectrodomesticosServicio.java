@@ -3,6 +3,8 @@
 package Servicies;
 
 import Entities.Electrodomesticos;
+import Enum.Color;
+import Enum.Consumo;
 import java.util.Scanner;
 
 public class ElectrodomesticosServicio {
@@ -15,17 +17,84 @@ public class ElectrodomesticosServicio {
         this.elect = new Electrodomesticos();
     }
 
+    //• Método comprobarColor(String color): comprueba que el color es correcto, y si no lo es,
+    //usa el color blanco por defecto. Los colores disponibles para los electrodomésticos son
+    //blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en
+    //minúsculas. Este método se invocará al crear el objeto y no será visible.
+    private void comprobarColor() {
+        System.out.println("colores disponibles");
+        for (Color c : Color.values()) {
+            System.out.println(c);
+        }
+
+        String col = sc.next().toUpperCase();
+        if (col.isEmpty()) {
+            col = Color.DEFAULT.name();
+        }
+        boolean verdadero = false;
+        for (Color c : Color.values()) {
+            if (c.name().equals(col)) {
+                verdadero = true;
+                break;
+            }
+        }
+        if (verdadero) {
+            elect.setColor(Color.valueOf(col));
+        } else {
+            elect.setColor(elect.getColor());
+        }
+    }
+
+    //• Método comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta,
+    //sino es correcta usara la letra F por defecto. Este método se debe invocar al crear el
+    //objeto y no será visible.
+    private void comprobarConsumoEnergetico() {
+        System.out.println("consumos energeticos disponibles");
+        for (Consumo c : Consumo.values()) {
+            System.out.println(c);
+        }
+
+        String cons = sc.next().toUpperCase();
+        if (cons.isEmpty()) {
+            cons = Consumo.DEFAULT.name();
+        }
+        boolean verdadero = false;
+        for (Consumo c : Consumo.values()) {
+            if (c.name().equals(cons)) {
+                verdadero = true;
+                break;
+            }
+        }
+        if (verdadero) {
+            elect.setConsumo(Consumo.valueOf(cons));
+        } else {
+            elect.setConsumo(elect.getConsumo());
+        }
+    }
+
     /*• Metodo crearElectrodomestico(): le pide la información al usuario y llena el
     electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
     precio se le da un valor base de $1000.(precio, color,
     //consumo energético (letras entre A y F) y peso)*/
     public Electrodomesticos crearElectrodomestico() {
-        //elect = new Electrodomesticos();
+        comprobarColor();
+        comprobarConsumoEnergetico();
         double precioBase = 1000;
         System.out.println("precio");
-        elect.setPrecio(precioBase + sc.nextDouble());
+        while (!sc.hasNextDouble()) {
+            System.out.println("Debe ingresar precio valido.");
+            sc.next();
+        }
+        double precio = sc.nextDouble();
+
+        elect.setPrecio(precioBase + precio);
         System.out.println("peso");
-        elect.setPeso(sc.nextDouble());
+        while (!sc.hasNextDouble()) {
+            System.out.println("Debe ingresar peso valido.");
+            sc.next();
+        }
+        double peso = sc.nextDouble();
+        elect.setPeso(peso);
         return elect;
     }
 
@@ -39,7 +108,7 @@ D $500
 E $300
 F $100
      */
-    private void precioConsumo() {
+    public void precioConsumo() {
         switch (elect.getConsumo()) {
             case A ->
                 elect.setPrecio(elect.getPrecio() + 1000);
@@ -61,7 +130,7 @@ Entre 1 y 19 kg $100
 Entre 20 y 49 kg $500
 Entre 50 y 79 kg $800
 Mayor que 80 kg $1000*/
-    private void precioPeso() {
+    public void precioPeso() {
         double pesoPrecio = 0;
         pesoPrecio = (elect.getPeso() > 0 && elect.getPeso() < 20) ? pesoPrecio + 100 : pesoPrecio;
         pesoPrecio = (elect.getPeso() > 19 && elect.getPeso() < 50) ? pesoPrecio + 500 : pesoPrecio;
