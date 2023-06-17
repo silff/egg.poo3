@@ -11,6 +11,8 @@ public class TelevisorServicio extends ElectrodomesticosServicio {
 
     protected Electrodomesticos eL = crearElectrodomestico();
     protected Televisor tv = new Televisor();
+    protected double precioPulgadas = 0;
+    protected double precioTdt = 0;
 
     public void crearTelevisor() {
         System.out.println("Resolucion");
@@ -43,9 +45,7 @@ también deben afectar al precio.*/
     public void precioFinal() {
         precioConsumo();
         precioPeso();
-        double precioPulgadas = 0;
         precioPulgadas = (tv.getResolucion() > 40) ? precioPulgadas + (eL.getPrecio() * 1.3) : precioPulgadas;
-        double precioTdt = 0;
         precioTdt = (tv.isSintonizadorTDT() == true) ? precioTdt + 500 : precioTdt;
         tv.setPrecio(precioPulgadas + precioTdt + eL.getPrecio());
     }
@@ -53,7 +53,7 @@ también deben afectar al precio.*/
     @Override
     public String toString() {
         return """
-               """ + eL + tv + "| incremento " + (tv.getPrecio() - eL.getPrecio())
+               """ + eL + tv + "| incremento pulgadas " + precioPulgadas + "| incremento sintonizador " + precioTdt
                 + "\nPrecio final " + tv.getPrecio();
     }
 

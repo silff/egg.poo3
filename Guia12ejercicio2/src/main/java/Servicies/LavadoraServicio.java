@@ -16,6 +16,7 @@ public class LavadoraServicio extends ElectrodomesticosServicio {
 
     protected Electrodomesticos eL = crearElectrodomestico();
     protected Lavadora lv = new Lavadora();
+    protected double precioCarga = 0;
 
     public void crearLavadora() {
         System.out.println("carga");
@@ -31,7 +32,6 @@ public class LavadoraServicio extends ElectrodomesticosServicio {
     public void precioFinal() {
         precioConsumo();
         precioPeso();
-        double precioCarga = 0;
         precioCarga = (lv.getCarga() > 30) ? precioCarga + 500 : precioCarga;
         lv.setPrecio(precioCarga + eL.getPrecio());
     }
@@ -39,7 +39,7 @@ public class LavadoraServicio extends ElectrodomesticosServicio {
     @Override
     public String toString() {
         return """
-                """ + eL + lv + " incremento " + (lv.getPrecio() - eL.getPrecio())
+                """ + eL + lv + " incremento " + precioCarga
                 + "\nPrecio final " + lv.getPrecio();
     }
 
