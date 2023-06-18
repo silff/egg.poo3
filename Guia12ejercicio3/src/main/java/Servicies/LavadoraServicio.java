@@ -14,9 +14,15 @@ import Entities.Lavadora;
 
 public class LavadoraServicio extends ElectrodomesticosServicio {
 
-    protected Electrodomesticos eL = crearElectrodomestico();
-    protected Lavadora lv = new Lavadora();
-    protected double precioCarga = 0;
+    protected Electrodomesticos eL;
+    protected Lavadora lv;
+    protected double precioCarga;
+
+    public LavadoraServicio() {
+        this.lv = new Lavadora();
+        this.eL = crearElectrodomestico();
+        this.precioCarga = 0;
+    }
 
     public Lavadora crearLavadora() {
         System.out.println("carga");
@@ -25,8 +31,7 @@ public class LavadoraServicio extends ElectrodomesticosServicio {
             sc.next();
         }
         double carga = sc.nextDouble();
-        lv.setCarga(carga);
-        return lv;
+        return lv = new Lavadora(carga, eL.getPrecio(), eL.getColor(), eL.getConsumo(), eL.getPeso());
     }
 
     @Override

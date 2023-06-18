@@ -4,11 +4,9 @@ package Entities;
 
 import Enum.Color;
 import Enum.Consumo;
-import java.util.Scanner;
 
 public class Electrodomesticos {
 
-    private Scanner sc;
     //precio, color,
     //consumo energético (letras entre A y F) y peso.
     private double precio;
@@ -20,7 +18,7 @@ public class Electrodomesticos {
     //• Un constructor vacío.
     //• Un constructor con todos los atributos pasados por parámetro.
     public Electrodomesticos() {
-        this.sc = new Scanner(System.in).useDelimiter("\n");
+
     }
 
     public Electrodomesticos(double precio, Color color, Consumo consumo, double peso) {

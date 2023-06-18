@@ -45,7 +45,8 @@ public class Televisor extends Electrodomesticos {
 
     @Override
     public String toString() {
-        return """
+        return super.toString()
+                + """
                
                Televisor
                """ + "resolucion " + resolucion + "| sintonizador TDT " + sintonizadorTDT;

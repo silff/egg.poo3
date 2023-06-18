@@ -35,10 +35,11 @@ public class Lavadora extends Electrodomesticos {
 
     @Override
     public String toString() {
-        return """
+        return super.toString()
+                + """
                
-               Lavadora              
-               """ + "carga " + carga;
+                Lavadora
+                carga """ + carga;
     }
 
 }

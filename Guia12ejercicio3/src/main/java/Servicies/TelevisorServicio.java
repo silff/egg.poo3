@@ -9,31 +9,38 @@ import Entities.Televisor;
 
 public class TelevisorServicio extends ElectrodomesticosServicio {
 
-    protected Electrodomesticos eL = crearElectrodomestico();
-    protected Televisor tv = new Televisor();
-    protected double precioPulgadas = 0;
-    protected double precioTdt = 0;
+    protected Electrodomesticos eL;
+    protected Televisor tv;
+    protected double precioPulgadas;
+    protected double precioTdt;
 
-    public void crearTelevisor() {
+    public TelevisorServicio() {
+        this.eL = crearElectrodomestico();
+        this.tv = new Televisor();
+        this.precioPulgadas = 0;
+        this.precioTdt = 0;
+    }
+
+    public Televisor crearTelevisor() {
         System.out.println("Resolucion");
         while (!sc.hasNextDouble()) {
             System.out.println("Debe ingresar un numero valido.");
             sc.next();
         }
         double pulgadas = sc.nextDouble();
-        tv.setResolucion(pulgadas);
         System.out.println("TDT");
         String tdt = "";
+        boolean sinto = false;
         while (!tdt.equalsIgnoreCase("si") && !tdt.equalsIgnoreCase("no")) {
             System.out.println("debe ingresar si o no");
             tdt = sc.next();
         }
         if (tdt.equalsIgnoreCase("si")) {
-            tv.setSintonizadorTDT(true);
+            sinto = true;
         } else if (tdt.equalsIgnoreCase("no")) {
-            tv.setSintonizadorTDT(false);
+            sinto = false;
         }
-
+        return tv = new Televisor(pulgadas, sinto, eL.getPrecio(), eL.getColor(), eL.getConsumo(), eL.getPeso());
     }
 
     /*• Método precioFinal(): este método será heredado y se le sumará la siguiente
