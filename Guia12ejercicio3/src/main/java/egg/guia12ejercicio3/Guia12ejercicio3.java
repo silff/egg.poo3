@@ -22,12 +22,12 @@ public class Guia12ejercicio3 {
         LavadoraServicio lvS;
         TelevisorServicio tvS;
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
             lvS = new LavadoraServicio();
             electrodomesticosList.add(lvS.crearLavadora());
             lvS.precioFinal();
         }
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
             tvS = new TelevisorServicio();
             electrodomesticosList.add(tvS.crearTelevisor());
             tvS.precioFinal();

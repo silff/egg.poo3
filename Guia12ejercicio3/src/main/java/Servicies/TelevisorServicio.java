@@ -4,22 +4,24 @@ los atributos del televisor.
  */
 package Servicies;
 
+import Entities.Electrodomesticos;
 import Entities.Televisor;
 
 public class TelevisorServicio extends ElectrodomesticosServicio {
 
     protected Televisor tv;
+    protected Electrodomesticos eL;
     protected double precioPulgadas;
     protected double precioTdt;
 
     public TelevisorServicio() {
         this.tv = new Televisor();
+        this.eL = crearElectrodomestico();
         this.precioPulgadas = 0;
         this.precioTdt = 0;
     }
 
     public Televisor crearTelevisor() {
-        crearElectrodomestico();
         System.out.println("Resolucion");
         while (!sc.hasNextDouble()) {
             System.out.println("Debe ingresar un numero valido.");
@@ -38,7 +40,8 @@ public class TelevisorServicio extends ElectrodomesticosServicio {
         } else if (tdt.equalsIgnoreCase("no")) {
             sinto = false;
         }
-        return tv = new Televisor(pulgadas, sinto, tv.getPrecio(), tv.getColor(), tv.getConsumo(), tv.getPeso());
+        return tv = new Televisor(pulgadas, sinto,
+                eL.getPrecio(), eL.getColor(), eL.getConsumo(), eL.getPeso());
     }
 
     /*• Método precioFinal(): este método será heredado y se le sumará la siguiente

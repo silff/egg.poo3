@@ -18,6 +18,7 @@ public class YateServicio extends BarcoMotorServicio {
 
     public Yate crearYate() {
         crearBarco();
+        crearBarcoMotor();
         System.out.println("camarotes");
         yate.setCamarotes(sc.nextInt());
         return yate;

@@ -3,13 +3,10 @@
  */
 package entities;
 
-import java.util.ArrayList;
-
 public class Cliente {
 
     private String nombre;
     private long dni;
-    private ArrayList<Barco> barcos;
 
     public Cliente() {
     }

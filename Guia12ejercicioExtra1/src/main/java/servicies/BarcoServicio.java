@@ -16,9 +16,6 @@ public class BarcoServicio {
     }
 
     public Barco crearBarco() {
-        //String opcion;
-        // do {
-        barco = new Barco();
         System.out.println("ingrese matricula");
         String matricula = sc.next();
         barco.setMatricula(matricula);
@@ -29,23 +26,9 @@ public class BarcoServicio {
         int anio = sc.nextInt();
         barco.setAnio(anio);
 
-//        System.out.println("quiere ingresar otro?");
-//        opcion = sc.next();
-        // } while (opcion.equalsIgnoreCase("si"));
-        return barco;
+        return barco = new Barco(matricula, eslora, anio);
     }
 
-//    @Override
-//    public String toString() {
-//
-//        String sb = "";
-//        System.out.println("BARCOS");
-//        for (Barco barco1 : barcos) {
-//            sb += (barco1.toString() + "\n");
-//        }
-//        return sb;
-//
-//    }
     @Override
     public String toString() {
         return """

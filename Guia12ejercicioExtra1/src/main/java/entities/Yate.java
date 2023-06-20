@@ -62,7 +62,6 @@ public class Yate extends BarcoMotor {
     @Override
     public String toString() {
         return super.toString() + """
-                                  Yate
                                   """ + "camarotes " + camarotes;
     }
 
