@@ -9,10 +9,10 @@ public class Electrodomesticos {
 
     //precio, color,
     //consumo energético (letras entre A y F) y peso.
-    private double precio;
-    private Color color;
-    private Consumo consumo;
-    private double peso;
+    protected double precio;
+    protected Color color;
+    protected Consumo consumo;
+    protected double peso;
 
     //Los constructores que se deben implementar son los siguientes:
     //• Un constructor vacío.

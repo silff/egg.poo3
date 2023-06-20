@@ -9,29 +9,27 @@ visto en la clase Electrodoméstico también deben afectar al precio.
  */
 package Servicies;
 
-import Entities.Electrodomesticos;
 import Entities.Lavadora;
 
 public class LavadoraServicio extends ElectrodomesticosServicio {
 
-    protected Electrodomesticos eL;
     protected Lavadora lv;
     protected double precioCarga;
 
     public LavadoraServicio() {
         this.lv = new Lavadora();
-        this.eL = crearElectrodomestico();
         this.precioCarga = 0;
     }
 
     public Lavadora crearLavadora() {
+        crearElectrodomestico();
         System.out.println("carga");
         while (!sc.hasNextDouble()) {
             System.out.println("Debe ingresar un numero valido.");
             sc.next();
         }
         double carga = sc.nextDouble();
-        return lv = new Lavadora(carga, eL.getPrecio(), eL.getColor(), eL.getConsumo(), eL.getPeso());
+        return lv = new Lavadora(carga, lv.getPrecio(), lv.getColor(), lv.getConsumo(), lv.getPeso());
     }
 
     @Override
@@ -39,13 +37,13 @@ public class LavadoraServicio extends ElectrodomesticosServicio {
         precioConsumo();
         precioPeso();
         precioCarga = (lv.getCarga() > 30) ? precioCarga + 500 : precioCarga;
-        lv.setPrecio(precioCarga + eL.getPrecio());
+        lv.setPrecio(precioCarga + lv.getPrecio());
     }
 
     @Override
     public String toString() {
         return """
-                """ + eL + lv + " incremento " + precioCarga
+                """ + lv + " incremento " + precioCarga
                 + "\nPrecio final " + lv.getPrecio();
     }
 

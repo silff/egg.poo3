@@ -15,8 +15,8 @@ import Enum.Consumo;
 
 public class Televisor extends Electrodomesticos {
 
-    private double resolucion;
-    private boolean sintonizadorTDT;
+    protected double resolucion;
+    protected boolean sintonizadorTDT;
 
     public Televisor() {
     }
@@ -41,6 +41,38 @@ public class Televisor extends Electrodomesticos {
 
     public void setSintonizadorTDT(boolean sintonizadorTDT) {
         this.sintonizadorTDT = sintonizadorTDT;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Consumo getConsumo() {
+        return consumo;
+    }
+
+    public void setConsumo(Consumo consumo) {
+        this.consumo = consumo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
 
     @Override

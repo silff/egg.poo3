@@ -1,16 +1,16 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
+ */
 package egg.guia12ejercicioextra1;
 
-/**
- *
- * @author Silvana
- */
+import servicies.BarcoServicio;
+
 public class Guia12ejercicioExtra1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        BarcoServicio bS = new BarcoServicio();
+        bS.crearBarco();
+        System.out.println(bS.toString());
     }
 }

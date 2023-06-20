@@ -4,24 +4,22 @@ los atributos del televisor.
  */
 package Servicies;
 
-import Entities.Electrodomesticos;
 import Entities.Televisor;
 
 public class TelevisorServicio extends ElectrodomesticosServicio {
 
-    protected Electrodomesticos eL;
     protected Televisor tv;
     protected double precioPulgadas;
     protected double precioTdt;
 
     public TelevisorServicio() {
-        this.eL = crearElectrodomestico();
         this.tv = new Televisor();
         this.precioPulgadas = 0;
         this.precioTdt = 0;
     }
 
     public Televisor crearTelevisor() {
+        crearElectrodomestico();
         System.out.println("Resolucion");
         while (!sc.hasNextDouble()) {
             System.out.println("Debe ingresar un numero valido.");
@@ -40,7 +38,7 @@ public class TelevisorServicio extends ElectrodomesticosServicio {
         } else if (tdt.equalsIgnoreCase("no")) {
             sinto = false;
         }
-        return tv = new Televisor(pulgadas, sinto, eL.getPrecio(), eL.getColor(), eL.getConsumo(), eL.getPeso());
+        return tv = new Televisor(pulgadas, sinto, tv.getPrecio(), tv.getColor(), tv.getConsumo(), tv.getPeso());
     }
 
     /*• Método precioFinal(): este método será heredado y se le sumará la siguiente
@@ -52,15 +50,15 @@ también deben afectar al precio.*/
     public void precioFinal() {
         precioConsumo();
         precioPeso();
-        precioPulgadas = (tv.getResolucion() > 40) ? precioPulgadas + (eL.getPrecio() * 1.3) : precioPulgadas;
+        precioPulgadas = (tv.getResolucion() > 40) ? precioPulgadas + (tv.getPrecio() * 1.3) : precioPulgadas;
         precioTdt = (tv.isSintonizadorTDT() == true) ? precioTdt + 500 : precioTdt;
-        tv.setPrecio(precioPulgadas + precioTdt + eL.getPrecio());
+        tv.setPrecio(precioPulgadas + precioTdt + tv.getPrecio());
     }
 
     @Override
     public String toString() {
         return """
-               """ + eL + tv + "| incremento pulgadas " + precioPulgadas + "| incremento sintonizador " + precioTdt
+               """ + tv + "| incremento pulgadas " + precioPulgadas + "| incremento sintonizador " + precioTdt
                 + "\nPrecio final " + tv.getPrecio();
     }
 

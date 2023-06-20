@@ -15,7 +15,7 @@ import Enum.Consumo;
 
 public class Lavadora extends Electrodomesticos {
 
-    private double carga;
+    protected double carga;
 
     public Lavadora() {
     }
@@ -31,6 +31,38 @@ public class Lavadora extends Electrodomesticos {
 
     public void setCarga(double carga) {
         this.carga = carga;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Consumo getConsumo() {
+        return consumo;
+    }
+
+    public void setConsumo(Consumo consumo) {
+        this.consumo = consumo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
 
     @Override
