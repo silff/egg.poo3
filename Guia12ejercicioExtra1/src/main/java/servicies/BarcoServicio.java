@@ -32,7 +32,6 @@ public class BarcoServicio {
     @Override
     public String toString() {
         return """
-               barco
                """ + barco;
     }
 

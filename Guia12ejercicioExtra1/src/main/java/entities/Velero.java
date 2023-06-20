@@ -52,8 +52,9 @@ public class Velero extends Barco {
 
     @Override
     public String toString() {
-        return super.toString()
-                + " | mastiles " + mastiles;
+        return """
+               """
+                + "| mastiles " + mastiles;
     }
 
 }

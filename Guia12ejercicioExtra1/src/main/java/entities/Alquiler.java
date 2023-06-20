@@ -13,8 +13,8 @@ public class Alquiler {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private int posAmarre;
-    private BarcoMotor barcoMotor;
     private Velero velero;
+    private BarcoMotor barcoMotor;
     private Yate yate;
 
     public Alquiler() {
@@ -24,13 +24,13 @@ public class Alquiler {
         this.yate = new Yate();
     }
 
-    public Alquiler(Cliente cliente, LocalDate fechaInicio, LocalDate fechaFin, int posAmarre, BarcoMotor barcoMotor, Velero velero, Yate yate) {
+    public Alquiler(Cliente cliente, LocalDate fechaInicio, LocalDate fechaFin, int posAmarre, Velero velero, BarcoMotor barcoMotor, Yate yate) {
         this.cliente = cliente;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.posAmarre = posAmarre;
-        this.barcoMotor = barcoMotor;
         this.velero = velero;
+        this.barcoMotor = barcoMotor;
         this.yate = yate;
     }
 
@@ -66,20 +66,20 @@ public class Alquiler {
         this.posAmarre = posAmarre;
     }
 
-    public BarcoMotor getBarcoMotor() {
-        return barcoMotor;
-    }
-
-    public void setBarcoMotor(BarcoMotor barcoMotor) {
-        this.barcoMotor = barcoMotor;
-    }
-
     public Velero getVelero() {
         return velero;
     }
 
     public void setVelero(Velero velero) {
         this.velero = velero;
+    }
+
+    public BarcoMotor getBarcoMotor() {
+        return barcoMotor;
+    }
+
+    public void setBarcoMotor(BarcoMotor barcoMotor) {
+        this.barcoMotor = barcoMotor;
     }
 
     public Yate getYate() {

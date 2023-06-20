@@ -53,7 +53,9 @@ public class BarcoMotor extends Barco {
 
     @Override
     public String toString() {
-        return super.toString() + "| potenciaCV " + potenciaCV;
+        return """
+               """
+                + "| potenciaCV " + potenciaCV;
     }
 
 }

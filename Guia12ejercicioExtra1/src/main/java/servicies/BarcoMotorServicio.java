@@ -18,15 +18,16 @@ public class BarcoMotorServicio extends BarcoServicio {
 
     public BarcoMotor crearBarcoMotor() {
         crearBarco();
-        System.out.println("Ptencia motor");
+        System.out.println("Potencia motor");
         bm.setPotenciaCV(sc.nextInt());
         return bm;
     }
 
     @Override
     public String toString() {
-        return """
-               """ + "bm" + bm;
+        return super.toString()
+                + """
+               """ + bm;
     }
 
 }

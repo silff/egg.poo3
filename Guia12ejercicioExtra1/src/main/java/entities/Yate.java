@@ -61,8 +61,8 @@ public class Yate extends BarcoMotor {
 
     @Override
     public String toString() {
-        return super.toString() + """
-                                  """ + "camarotes " + camarotes;
+        return """
+               """ + "| camarotes " + camarotes;
     }
 
 }

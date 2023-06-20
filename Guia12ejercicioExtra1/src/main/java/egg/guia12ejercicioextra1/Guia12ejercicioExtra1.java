@@ -4,7 +4,6 @@
 package egg.guia12ejercicioextra1;
 
 import servicies.AlquilerServicio;
-import servicies.BarcoServicio;
 
 public class Guia12ejercicioExtra1 {
 

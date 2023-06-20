@@ -35,17 +35,20 @@ public class AlquilerServicio {
         alquiler.getCliente().setNombre(sc.next());
         System.out.println("cliente dni");
         alquiler.getCliente().setDni(sc.nextLong());
-        System.out.println("barco tipo - 1 BARCO MOTOR - 2 VELERO - 3 YATE");
+        System.out.println("barco tipo - 1 VELERO - 2 BARCO MOTOR - 3 YATE");
         int tipoBarco = sc.nextInt();
         switch (tipoBarco) {
             case 1:
-                barcoMotorServicio.crearBarcoMotor();
+                veleroServicio.crearVelero();
+                alquiler.setVelero(alquiler.getVelero());
                 break;
             case 2:
-                veleroServicio.crearVelero();
+                barcoMotorServicio.crearBarcoMotor();
+                alquiler.setBarcoMotor(alquiler.getBarcoMotor());
                 break;
             case 3:
                 yateServicio.crearYate();
+                alquiler.setYate(alquiler.getYate());
                 break;
             default:
                 System.out.println("no es una opcion valida");
@@ -79,7 +82,8 @@ multiplicando por 10 los metros de eslora).*/
     public String toString() {
         return """
                Alquiler
-               """ + alquiler + super.toString();
+               """ + alquiler + "\nVelero " + veleroServicio.toString() + "\nBarco Motor" + barcoMotorServicio.toString()
+                + "\nYate " + yateServicio.toString();
     }
 
 }

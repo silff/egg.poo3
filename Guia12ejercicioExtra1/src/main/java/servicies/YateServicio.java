@@ -17,7 +17,6 @@ public class YateServicio extends BarcoMotorServicio {
     }
 
     public Yate crearYate() {
-        crearBarco();
         crearBarcoMotor();
         System.out.println("camarotes");
         yate.setCamarotes(sc.nextInt());
@@ -26,8 +25,9 @@ public class YateServicio extends BarcoMotorServicio {
 
     @Override
     public String toString() {
-        return """
-               """ + "yate " + yate;
+        return super.toString()
+                + """
+               """ + yate;
     }
 
 }
