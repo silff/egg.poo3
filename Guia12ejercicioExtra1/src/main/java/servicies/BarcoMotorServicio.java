@@ -24,6 +24,11 @@ public class BarcoMotorServicio extends BarcoServicio {
     }
 
     @Override
+    public double moduloBarco() {
+        return super.moduloBarco() + bm.getPotenciaCV();
+    }
+
+    @Override
     public String toString() {
         return super.toString()
                 + """

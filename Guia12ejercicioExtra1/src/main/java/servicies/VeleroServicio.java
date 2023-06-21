@@ -26,6 +26,12 @@ public class VeleroServicio extends BarcoServicio {
     }
 
     @Override
+    public double moduloBarco() {
+        return super.moduloBarco() + velero.getMastiles(); 
+    }
+
+    
+    @Override
     public String toString() {
         return super.toString()
                 + """

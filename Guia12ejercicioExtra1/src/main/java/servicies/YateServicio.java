@@ -1,5 +1,4 @@
-/*
- 
+/* 
  */
 package servicies;
 
@@ -21,6 +20,11 @@ public class YateServicio extends BarcoMotorServicio {
         System.out.println("camarotes");
         yate.setCamarotes(sc.nextInt());
         return yate;
+    }
+
+    @Override
+    public double moduloBarco() {
+        return super.moduloBarco() + yate.getCamarotes();
     }
 
     @Override

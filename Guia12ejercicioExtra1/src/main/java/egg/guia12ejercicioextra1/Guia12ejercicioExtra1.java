@@ -12,5 +12,8 @@ public class Guia12ejercicioExtra1 {
         AlquilerServicio aS = new AlquilerServicio();
         aS.datosAlquiler();
         System.out.println(aS.toString());
+        aS.mostrar();
+        aS.calcularAlquiler();
+        
     }
 }

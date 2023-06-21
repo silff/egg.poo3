@@ -29,6 +29,10 @@ public class BarcoServicio {
         return barco = new Barco(matricula, eslora, anio);
     }
 
+    public double moduloBarco() {
+        return barco.getEslora() * 10;
+    }
+
     @Override
     public String toString() {
         return """
