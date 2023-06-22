@@ -79,9 +79,9 @@ el número de camarotes.*/
                 System.out.println(veleroServicio.moduloBarco() * dias);
                 break;
             case 2:
-                System.out.println(barcoMotorServicio.moduloBarco());
+                System.out.println(barcoMotorServicio.moduloBarco() * dias);
             case 3:
-                System.out.println(yateServicio.moduloBarco());
+                System.out.println(yateServicio.moduloBarco() * dias);
                 break;
         }
     }
