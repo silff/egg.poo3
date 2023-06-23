@@ -2,25 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.egg</groupId>
-    <artifactId>egg.poo3</artifactId>
+    <artifactId>Guia12ejercicioExtra3</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>Guia11ejercicio2extra</module>
-        <module>Guia12manos1</module>
-        <module>Guia12manos2</module>
-        <module>Guia12ejercicio1</module>
-        <module>Guia12ejercicio2</module>
-        <module>Guia12ejercicio3</module>
-        <module>Guia12ejercicio4</module>
-        <module>Guia12ejercicioExtra1</module>
-        <module>Guia12ejercicioExtra2</module>
-        <module>Guia12ejercicioExtra3</module>
-    </modules>
+    <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <exec.mainClass>EggPoo3</exec.mainClass>
+        <exec.mainClass>com.egg.guia12ejercicioextra3.Guia12ejercicioExtra3</exec.mainClass>
     </properties>
 </project>
