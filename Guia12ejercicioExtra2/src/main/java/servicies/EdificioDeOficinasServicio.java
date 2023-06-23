@@ -19,45 +19,44 @@ public class EdificioDeOficinasServicio {
     }
 
     public EdificioDeOficinas crearEdificioDeOficinas() {
+
         System.out.println("ancho");
         double ancho = sc.nextDouble();
+        edOf.setAncho(ancho);
         System.out.println("largo");
         double largo = sc.nextDouble();
+        edOf.setLargo(largo);
         System.out.println("alto");
         double alto = sc.nextDouble();
-        int cantPisos = cantidadPisos();
+        edOf.setAlto(alto);
         int cantOf = cantidadOficinas();
-        int cantPers = cantPersonas();
-        edOf.setCantidadPersonas(cantPersonas());
+        System.out.println("cuantas personas entran por oficina");
+        int cantPers = sc.nextInt();
+        int cantPe = cantPersonas(cantPers);
+        int cantPisos = cantidadPisos();
 
-        return edOf = new EdificioDeOficinas(cantOf, cantPers,
+        return edOf = new EdificioDeOficinas(cantOf, cantPe,
                 cantPisos, ancho, alto, largo);
     }
 
-    //cantidad de personas por oficina(30 mt2 c/u) / 
-    public int cantPersonas() {
-        System.out.println("cuantas personas entran por oficina");
-        int cantPersonas = sc.nextInt();
-        int calculoPersonas = (int) cantPersonas * cantidadOficinas();
-        return calculoPersonas * cantidadPisos();
+    //cantidad de personas por oficina(30 mt2 c/u) / total del edificio
+    public int cantPersonas(int cantPersonas) {
+        return (int) cantPersonas * cantidadOficinas() * cantidadPisos();
     }
 
     //altura minima techo 2.5 mts
     public int cantidadPisos() {
-        int cantPisos = (int) (edOf.getAlto() / 2.5);
-        return cantPisos;
+        return (int) (edOf.getAlto() / 2.5);
     }
 
     //oficinas x piso c/u 30 mts2
     public int cantidadOficinas() {
-        int cantOfic = (int) edOf.calcularSuperficie() / 30;
-        return cantOfic;
+        return (int) edOf.calcularSuperficie() / 30;
     }
 
     @Override
     public String toString() {
         return """
-               EdificioDeOficinasServicio
                """ + edOf;
     }
 

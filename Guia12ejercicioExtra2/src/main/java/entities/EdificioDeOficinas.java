@@ -87,13 +87,12 @@ public class EdificioDeOficinas extends Edificio {
 
     @Override
     public String toString() {
-        return super.toString()
+        return """
+                    Edificio Oficinas
+                 """ + super.toString()
                 + "\nvol total " + calcularVolumen()
                 + "\nsup total " + calcularSuperficie()
-                + """
-                   Edificio Oficinas
-                 """
-                + "Oficinas por piso " + numeroOficinas
+                + "\nOficinas por piso " + numeroOficinas
                 + "\npisos " + pisos + "\ntotal oficinas " + pisos * numeroOficinas
                 + "\ntotal personas edificio " + cantidadPersonas;
     }

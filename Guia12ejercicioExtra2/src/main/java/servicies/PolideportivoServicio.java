@@ -42,9 +42,7 @@ public class PolideportivoServicio {
         int tech = 0;
         int ab = 0;
         for (Edificio listaEdificio : listaEdificios) {
-
             if (listaEdificio instanceof Polideportivo pol) {
-
                 if (pol.getTecho() == Techo.TECHADO) {
                     tech++;
                 } else {
@@ -52,6 +50,7 @@ public class PolideportivoServicio {
                 }
             }
         }
+        System.out.println("polideportivos: ");
         System.out.println("techados " + tech + " abiertos " + ab);
     }
 

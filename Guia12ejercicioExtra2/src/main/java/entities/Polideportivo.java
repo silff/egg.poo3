@@ -77,11 +77,12 @@ public class Polideportivo extends Edificio {
 
     @Override
     public String toString() {
-        return super.toString()
+        return """
+                 Polideportivo
+               """ + super.toString()
                 + "\nvol total " + calcularVolumen()
                 + "\nsup total " + calcularSuperficie()
-                + """
-                 Polideportivo
-               """ + "nombre " + nombre + "\ntipo " + techo;
+                + "\nnombre " + nombre
+                + "\ntipo " + techo;
     }
 }

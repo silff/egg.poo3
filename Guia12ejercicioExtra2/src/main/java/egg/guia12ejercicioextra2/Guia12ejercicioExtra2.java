@@ -8,7 +8,6 @@ cantPersonas() y mostrar los resultados de cada edificio de oficinas.
  */
 package egg.guia12ejercicioextra2;
 
-import emun.Techo;
 import entities.Edificio;
 import entities.EdificioDeOficinas;
 import entities.Polideportivo;
@@ -18,54 +17,40 @@ import servicies.EdificioDeOficinasServicio;
 import servicies.PolideportivoServicio;
 
 public class Guia12ejercicioExtra2 {
-    
+
     static Scanner sc = new Scanner(System.in).useDelimiter("\n");
-    
+
     public static void main(String[] args) {
-        
+
         ArrayList<Edificio> listaEdificios = new ArrayList();
         EdificioDeOficinasServicio ofS = new EdificioDeOficinasServicio();
-        EdificioDeOficinas ediOf = new EdificioDeOficinas();
+        EdificioDeOficinas ediOf;
         PolideportivoServicio poliS = new PolideportivoServicio();
-        Polideportivo poli = new Polideportivo();
-        
+        Polideportivo poli;
+
         int opcion;
         do {
             System.out.println("tipo de edificio 1 - Oficinas 2 - Polideportivo");
             opcion = sc.nextInt();
             switch (opcion) {
-                case 1:
+                case 1 -> {
                     ediOf = ofS.crearEdificioDeOficinas();
                     listaEdificios.add(ediOf);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     poli = poliS.crearPolideportivo();
                     listaEdificios.add(poli);
-                    break;
+                }
             }
-            
+
             System.out.println("(S)Salir ");
             if (sc.next().equalsIgnoreCase("s")) {
                 break;
             }
         } while (true);
-        
-        poliS.cantTechados(listaEdificios);
-//        int tech = 0;
-//        int ab = 0;
-//        for (Edificio listaEdificio : listaEdificios) {
-//
-//            if (listaEdificio instanceof Polideportivo pol) {
-//
-//                if (pol.getTecho() == Techo.TECHADO) {
-//                    tech++;
-//                } else {
-//                    ab++;
-//                }
-//            }
-//        }
-//        System.out.println("techados " + tech + " abiertos " + ab);
+
         System.out.println(listaEdificios);
+        poliS.cantTechados(listaEdificios);
     }
-    
+
 }
