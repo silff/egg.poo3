@@ -5,9 +5,7 @@ los atributos del padre.
  */
 package entities;
 
-import interfaces.EdifcioMetodos;
-
-public class EdificioDeOficinas extends Edificio implements EdifcioMetodos {
+public class EdificioDeOficinas extends Edificio {
 
     private int numeroOficinas;
     private int cantidadPersonas;
@@ -76,21 +74,27 @@ public class EdificioDeOficinas extends Edificio implements EdifcioMetodos {
     public void setLargo(double largo) {
         this.largo = largo;
     }
-      
+
     @Override
     public double calcularSuperficie() {
-      return ancho * largo;
+        return ancho * largo;
     }
 
     @Override
     public double calcularVolumen() {
-      return ancho * largo * alto;
+        return ancho * largo * alto;
     }
 
     @Override
     public String toString() {
-        return "EdificioDeOficinas{" + "numeroOficinas=" + numeroOficinas + ", cantidadPersonas=" + cantidadPersonas + ", pisos=" + pisos + '}';
+        return super.toString()
+                + "\nvol total " + calcularVolumen()
+                + "\nsup total " + calcularSuperficie()
+                + """
+                   Edificio Oficinas
+                 """
+                + "Oficinas por piso " + numeroOficinas
+                + "\npisos " + pisos + "\ntotal oficinas " + pisos * numeroOficinas
+                + "\ntotal personas edificio " + cantidadPersonas;
     }
-    
-    
 }

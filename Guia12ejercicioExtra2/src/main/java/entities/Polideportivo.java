@@ -4,25 +4,25 @@ Abierto, esta clase implementará los dos métodos abstractos y los atributos de
  */
 package entities;
 
-import interfaces.EdifcioMetodos;
+import emun.Techo;
 
-public class Polideportivo extends Edificio implements EdifcioMetodos {
+public class Polideportivo extends Edificio {
 
     private String nombre;
-    private String tipo;
+    private Techo techo;
 
     public Polideportivo() {
     }
 
-    public Polideportivo(String nombre, String tipo) {
+    public Polideportivo(String nombre, Techo techo) {
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.techo = techo;
     }
 
-    public Polideportivo(String nombre, String tipo, double ancho, double alto, double largo) {
+    public Polideportivo(String nombre, Techo techo, double ancho, double alto, double largo) {
         super(ancho, alto, largo);
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.techo = techo;
     }
 
     public String getNombre() {
@@ -33,12 +33,12 @@ public class Polideportivo extends Edificio implements EdifcioMetodos {
         this.nombre = nombre;
     }
 
-    public String getTipo() {
-        return tipo;
+    public Techo getTecho() {
+        return techo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTecho(Techo techo) {
+        this.techo = techo;
     }
 
     public double getAncho() {
@@ -64,11 +64,10 @@ public class Polideportivo extends Edificio implements EdifcioMetodos {
     public void setLargo(double largo) {
         this.largo = largo;
     }
-    
-    
+
     @Override
     public double calcularSuperficie() {
-       return ancho * largo;
+        return ancho * largo;
     }
 
     @Override
@@ -78,9 +77,11 @@ public class Polideportivo extends Edificio implements EdifcioMetodos {
 
     @Override
     public String toString() {
-        return "Polideportivo{" + "nombre=" + nombre + ", tipo=" + tipo + '}';
+        return super.toString()
+                + "\nvol total " + calcularVolumen()
+                + "\nsup total " + calcularSuperficie()
+                + """
+                 Polideportivo
+               """ + "nombre " + nombre + "\ntipo " + techo;
     }
-    
-    
-    
 }

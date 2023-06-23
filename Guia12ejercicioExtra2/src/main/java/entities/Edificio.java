@@ -4,8 +4,8 @@ edificio tendrá como métodos:
  */
 package entities;
 
-public class Edificio {
-    
+public abstract class Edificio {
+
     protected double ancho;
     protected double alto;
     protected double largo;
@@ -42,11 +42,15 @@ public class Edificio {
     public void setLargo(double largo) {
         this.largo = largo;
     }
-    
+
+    public abstract double calcularSuperficie();
+
+    public abstract double calcularVolumen();
+
     @Override
     public String toString() {
-        return "Edificio{" + "ancho=" + ancho + ", alto=" + alto + ", largo=" + largo + '}';
+        return """
+               """ + "ancho " + ancho + ", alto " + alto + ", largo " + largo;
     }
-    
-    
+
 }

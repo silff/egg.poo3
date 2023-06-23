@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class EdificioDeOficinasServicio {
 
     private final Scanner sc;
-    private final EdificioDeOficinas edOf;
+    private EdificioDeOficinas edOf;
 
     public EdificioDeOficinasServicio() {
         this.sc = new Scanner(System.in).useDelimiter("\n");
@@ -20,37 +20,45 @@ public class EdificioDeOficinasServicio {
 
     public EdificioDeOficinas crearEdificioDeOficinas() {
         System.out.println("ancho");
-        edOf.setAncho(sc.nextDouble());
+        double ancho = sc.nextDouble();
         System.out.println("largo");
-        edOf.setLargo(sc.nextDouble());
+        double largo = sc.nextDouble();
         System.out.println("alto");
-        edOf.setAlto(sc.nextDouble());
-        System.out.println("cantidad de pisos");
-        //int cantidad = sc.nextInt();
-        edOf.setPisos(cantidadPisos());
-        edOf.setNumeroOficinas(cantidadPisos());
+        double alto = sc.nextDouble();
+        int cantPisos = cantidadPisos();
+        int cantOf = cantidadOficinas();
+        int cantPers = cantPersonas();
         edOf.setCantidadPersonas(cantPersonas());
-        return edOf;
+
+        return edOf = new EdificioDeOficinas(cantOf, cantPers,
+                cantPisos, ancho, alto, largo);
     }
 
-    //cantidad de personas por metro cuadrado
+    //cantidad de personas por oficina(30 mt2 c/u) / 
     public int cantPersonas() {
-        System.out.println("cuantas personas entran por metro caudrado");
+        System.out.println("cuantas personas entran por oficina");
         int cantPersonas = sc.nextInt();
-        int calculoPersonas = (int) edOf.calcularSuperficie() / cantPersonas;
+        int calculoPersonas = (int) cantPersonas * cantidadOficinas();
         return calculoPersonas * cantidadPisos();
     }
 
+    //altura minima techo 2.5 mts
     public int cantidadPisos() {
-        int cantPisos = (int) edOf.getAlto() / 3;
+        int cantPisos = (int) (edOf.getAlto() / 2.5);
         return cantPisos;
+    }
+
+    //oficinas x piso c/u 30 mts2
+    public int cantidadOficinas() {
+        int cantOfic = (int) edOf.calcularSuperficie() / 30;
+        return cantOfic;
     }
 
     @Override
     public String toString() {
         return """
                EdificioDeOficinasServicio
-               """ + ", edOf " + edOf;
+               """ + edOf;
     }
 
 }
