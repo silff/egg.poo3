@@ -1,22 +1,4 @@
-/*Las limosinas están disponibles para cualquier
-cliente, pero sujeto a disponibilidad, por lo que cuanto más limosinas tenga el hotel, más caro
-será.
-El precio de una habitación debe calcularse de acuerdo con la siguiente fórmula:
-PrecioHabitación = $50 + ($1 x capacidad del hotel) + (valor agregado por restaurante) + (valor
-agregado por gimnasio) + (valor agregado por limosinas).
-Donde:
-Valor agregado por el restaurante:
-• $10 si la capacidad del restaurante es de menos de 30 personas.
-• $30 si está entre 30 y 50 personas.
-• $50 si es mayor de 50.
-Valor agregado por el gimnasio:
-• $50 si el tipo del gimnasio es A.
-• $30 si el tipo del gimnasio es B.
-Valor agregado por las limosinas:
-• $15 por la cantidad de limosinas del hotel.
-
-17
-En contraste, los Alojamientos Extra hoteleros proveen servicios diferentes a los de los
+/* En contraste, los Alojamientos Extra hoteleros proveen servicios diferentes a los de los
 hoteles, estando más orientados a la vida al aire libre y al turista de bajos recursos. Por cada
 Alojamiento Extrahotelero se indica si es privado o no, así como la cantidad de metros
 cuadrados que ocupa. Existen dos tipos de alojamientos extrahoteleros: los Camping y las
@@ -31,12 +13,33 @@ Realizar un sistema de consulta que le permite al usuario consultar por diferent
 • todos los campings con restaurante
 • todos las residencias que tienen descuento.
  */
-
 package com.egg.guia12ejercicioextra3;
+
+import Enum.Gimnasio;
+import entities.Hotel4;
+import servicies.HotelServicio;
 
 public class Guia12ejercicioExtra3 {
 
     public static void main(String[] args) {
-      
+
+        Hotel4 hotel4 = new Hotel4();
+        HotelServicio hotelS = new HotelServicio();
+
+        System.out.println("");
+        hotel4.setNombre("Paraiso");
+        hotel4.setDireccion("Av Sauces");
+        hotel4.setLocalidad("olivos");
+        hotel4.setGerente("juan");
+        hotel4.setHabitaciones(10);
+        hotel4.setCamas(100);
+        hotel4.setPisos(5);
+        hotel4.setGimnasio(Gimnasio.A);
+        hotel4.setRestaurante("el diente");
+        hotel4.setCapacidadRest(30);
+       
+
+        System.out.println(hotel4);
+       
     }
 }

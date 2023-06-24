@@ -85,17 +85,18 @@ public class Hotel extends Alojamiento {
         this.gerente = gerente;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    /*El precio de una habitación debe calcularse de acuerdo con la siguiente fórmula:
+    PrecioHabitación = $50 + ($1 x capacidad del hotel) ////+ (valor agregado por restaurante) 
+    + (valor agregado por gimnasio) + (valor agregado por limosinas).*/
+    @Override
+    public double precio() {
+        return 50 + camas;
     }
 
     @Override
     public String toString() {
-        return "Hotel{" + "habitaciones=" + habitaciones + ", camas=" + camas + ", pisos=" + pisos + '}';
+        return super.toString()
+                + """
+                """ + "\nhabitaciones " + habitaciones + ", camas " + camas + ", pisos " + pisos;
     }
-
 }

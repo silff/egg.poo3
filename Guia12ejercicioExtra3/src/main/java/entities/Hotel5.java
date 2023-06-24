@@ -1,7 +1,9 @@
-/*
- • Hotel ***** Cantidad de Habitaciones, Número de camas, Cantidad de Pisos, Gimnasio,
+/*• Hotel ***** Cantidad de Habitaciones, Número de camas, Cantidad de Pisos, Gimnasio,
 Nombre del Restaurante, Capacidad del Restaurante, Cantidad Salones de
 Conferencia, Cantidad de Suites, Cantidad de Limosinas, Precio de las Habitaciones.
+Las limosinas están disponibles para cualquier
+cliente, pero sujeto a disponibilidad, por lo que cuanto más limosinas tenga el hotel, más caro
+será.
  */
 package entities;
 
@@ -147,12 +149,12 @@ public class Hotel5 extends Hotel4 {
         this.gerente = gerente;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    /*El precio de una habitación debe calcularse de acuerdo con la siguiente fórmula:
+    PrecioHabitación = $50 + ($1 x capacidad del hotel) + (valor agregado por restaurante) 
+    + (valor agregado por gimnasio) + (valor agregado por limosinas).*/
+    @Override
+    public double precio() {
+        return super.precio() + limosinas * 15;
     }
 
     @Override

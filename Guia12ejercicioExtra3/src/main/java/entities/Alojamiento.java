@@ -9,10 +9,8 @@ public abstract class Alojamiento {
 
     protected String nombre;
     protected String direccion;
-    ;
     protected String localidad;
     protected String gerente;
-    protected double precio = 50;
 
     public Alojamiento() {
     }
@@ -56,18 +54,13 @@ public abstract class Alojamiento {
         this.gerente = gerente;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
+    public abstract double precio();
 
     @Override
     public String toString() {
         return """
-               """ + "nombre " + nombre + ", direccion " + direccion + ", localidad " + localidad + ", gerente " + gerente + ", precio" + precio;
+               """ + "nombre " + nombre + "\ndireccion " + direccion
+                + ", " + localidad + ", gerente " + gerente + ", precio $" + precio();
     }
 
 }

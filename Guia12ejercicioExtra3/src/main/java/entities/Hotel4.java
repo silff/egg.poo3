@@ -115,17 +115,40 @@ public class Hotel4 extends Hotel {
         this.gerente = gerente;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    /*El precio de una habitación debe calcularse de acuerdo con la siguiente fórmula:
+    PrecioHabitación = $50 + ($1 x capacidad del hotel) + (valor agregado por restaurante) 
+    + (valor agregado por gimnasio) /// + (valor agregado por limosinas).
+    Donde:
+    Valor agregado por el restaurante:
+    • $10 si la capacidad del restaurante es de menos de 30 personas.
+    • $30 si está entre 30 y 50 personas.
+    • $50 si es mayor de 50.
+    Valor agregado por el gimnasio:
+    • $50 si el tipo del gimnasio es A.
+    • $30 si el tipo del gimnasio es B.
+    Valor agregado por las limosinas:
+    • $15 por la cantidad de limosinas del hotel.*/
+    @Override
+    public double precio() {
+        double pR;
+        if (capacidadRest < 30 && capacidadRest > 0) {
+            pR = 10;
+        } else if (capacidadRest >= 30 && capacidadRest < 50) {
+            pR = 30;
+        } else if (capacidadRest >= 50) {
+            pR = 50;
+        } else {
+            pR = 0;
+        }
+        return super.precio() + gimnasio.calcular() + pR;
     }
 
     @Override
     public String toString() {
-        return "Hotel4{" + "gimnasio=" + gimnasio + ", Restaurante=" + Restaurante + ", capacidadRest=" + capacidadRest + '}';
+        return super.toString()
+                + """
+                 """ + "\ngimnasio " + gimnasio + ", Restaurante " + Restaurante
+                + ", capacidad Rest " + capacidadRest;
     }
 
 }
