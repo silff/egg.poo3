@@ -2,6 +2,7 @@
  */
 package Enum;
 
-public enum Privado {
+public enum CampoDep {
+
     SI, NO;
 }

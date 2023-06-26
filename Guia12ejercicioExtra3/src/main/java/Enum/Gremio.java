@@ -2,6 +2,6 @@
  */
 package Enum;
 
-public enum Privado {
+public enum Gremio {
     SI, NO;
 }

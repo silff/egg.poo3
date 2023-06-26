@@ -7,7 +7,7 @@ características de las distintas categorías son las siguientes:
  */
 package entities;
 
-public class Hotel extends Alojamiento {
+public abstract class Hotel extends Alojamiento {
 
     protected int habitaciones;
     protected int camas;
