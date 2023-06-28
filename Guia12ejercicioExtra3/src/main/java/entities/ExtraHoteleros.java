@@ -8,7 +8,7 @@ package entities;
 import Enum.Privado;
 
 public abstract class ExtraHoteleros extends Alojamiento {
-    
+
     protected Privado privado;
     protected double m2;
 
@@ -79,13 +79,14 @@ public abstract class ExtraHoteleros extends Alojamiento {
     + (valor agregado por gimnasio) + (valor agregado por limosinas).*/
     @Override
     public double precio() {
-      return 50;
+        return 50;
     }
 
     @Override
     public String toString() {
-        return "ExtraHoteleros{" + "privado=" + privado + ", m2=" + m2 + '}';
+        return super.toString()
+                + """
+                  """ + "\nprivado " + privado + ", m2 " + m2;
     }
-    
-    
+
 }

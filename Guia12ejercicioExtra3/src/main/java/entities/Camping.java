@@ -107,7 +107,9 @@ public final class Camping extends ExtraHoteleros {
 
     @Override
     public String toString() {
-        return "Camping{" + "capacidadCarpas=" + capacidadCarpas + ", restaurante=" + restaurante + '}';
+        return super.toString()
+                + """
+                  """ + "\ncapacidadCarpas " + capacidadCarpas + ", restaurante " + restaurante;
     }
 
 }

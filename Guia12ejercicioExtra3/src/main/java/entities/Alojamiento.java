@@ -59,7 +59,7 @@ public abstract class Alojamiento {
     @Override
     public String toString() {
         return """
-               """ + "nombre " + nombre + "\ndireccion " + direccion
+               """ + "\nnombre " + nombre + "\ndireccion " + direccion
                 + ", " + localidad + ", gerente " + gerente + ", precio $" + precio();
     }
 
