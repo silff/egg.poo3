@@ -58,6 +58,6 @@ public class Guia12ejercicioExtra3 {
                 .filter(a -> a instanceof Residencia)
                 .map(a -> (Residencia) a)
                 .filter(a -> a.getGremio() == Gremio.SI)
-                .forEach(System.out::print);
+                .forEach(System.out::println);
     }
 }
