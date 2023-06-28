@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Guia12ejercicio1" />
+        <module name="Guia13" />
+        <module name="Guia13ejercicio3" />
+        <module name="Guia11ejercicio2extra" />
+        <module name="Guia12ejercicioExtra2" />
+        <module name="Guia12ejercicioExtra3" />
+        <module name="Guia12ejercicio4" />
+        <module name="Guia12ejercicioExtra1" />
+        <module name="Guia12ejercicio3" />
+        <module name="Guia12manos1" />
+        <module name="Guia12ejercicio2" />
+        <module name="Guia12manos2" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

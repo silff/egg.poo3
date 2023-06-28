@@ -9,7 +9,7 @@ package entities;
 
 import Enum.Gimnasio;
 
-public class Hotel5 extends Hotel4 {
+public final class Hotel5 extends Hotel4 {
 
     private int salonConferencia;
     private int suites;
@@ -159,7 +159,10 @@ public class Hotel5 extends Hotel4 {
 
     @Override
     public String toString() {
-        return "Hotel5{" + "salonConferencia=" + salonConferencia + ", suites=" + suites + ", limosinas=" + limosinas + '}';
+        return super.toString()
+        + """
+          """ + "\nsalonConferencia " + salonConferencia + ", suites " + suites + ", limosinas " +
+            + limosinas;
     }
 
 }

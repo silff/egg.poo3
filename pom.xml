@@ -16,6 +16,9 @@
         <module>Guia12ejercicioExtra1</module>
         <module>Guia12ejercicioExtra2</module>
         <module>Guia12ejercicioExtra3</module>
+        <module>Guia13ejercicio3</module>
+        <module>Guia13</module>
+        <module>Guia13Iintegrador</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

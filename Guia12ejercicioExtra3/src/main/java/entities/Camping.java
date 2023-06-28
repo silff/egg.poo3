@@ -98,7 +98,7 @@ public final class Camping extends ExtraHoteleros {
     public double precio() {
         double pR;
         if (restaurante == Restaurante.SI) {
-            pR = 10;
+            pR = 30;
         } else {
             pR = 0;
         }

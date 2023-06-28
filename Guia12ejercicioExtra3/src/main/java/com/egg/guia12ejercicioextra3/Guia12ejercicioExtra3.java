@@ -16,30 +16,26 @@ Realizar un sistema de consulta que le permite al usuario consultar por diferent
 package com.egg.guia12ejercicioextra3;
 
 import Enum.Gimnasio;
-import entities.Hotel4;
-import servicies.HotelServicio;
+import entities.*;
+
+import java.util.ArrayList;
+
 
 public class Guia12ejercicioExtra3 {
 
     public static void main(String[] args) {
 
-        Hotel4 hotel4 = new Hotel4();
-        HotelServicio hotelS = new HotelServicio();
+        ArrayList<Alojamiento> listaAlojamiento = new ArrayList<>();
+        listaAlojamiento.add(new Hotel4(Gimnasio.A, "A", 45, 50, 100, 10, "A", "A", "A", "A"));
+        listaAlojamiento.add(new Hotel4(Gimnasio.B, "A", 20, 25, 50, 5, "B", "B", "B", "B" ));
+        listaAlojamiento.add(new Hotel5(2,  5,  10,  Gimnasio.A,  "C",  200,  100,  200,  10,  "C",  "C",  "C",  "C"));
+        listaAlojamiento.add(new Hotel5( 3,  8,  15, Gimnasio.NO,  "D",  100,  80,  180,  8,  "D",  "D",  "D",  "D"));
+        listaAlojamiento.add(new Camping());
+        listaAlojamiento.add(new Camping());
+        listaAlojamiento.add(new Residencia());
+        listaAlojamiento.add(new Residencia());
 
-        System.out.println("");
-        hotel4.setNombre("Paraiso");
-        hotel4.setDireccion("Av Sauces");
-        hotel4.setLocalidad("olivos");
-        hotel4.setGerente("juan");
-        hotel4.setHabitaciones(10);
-        hotel4.setCamas(100);
-        hotel4.setPisos(5);
-        hotel4.setGimnasio(Gimnasio.A);
-        hotel4.setRestaurante("el diente");
-        hotel4.setCapacidadRest(30);
-       
-
-        System.out.println(hotel4);
+        System.out.println(listaAlojamiento);
        
     }
 }
